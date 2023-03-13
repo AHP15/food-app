@@ -1,0 +1,43 @@
+.form-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+form {
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 1px 1px 5px lightblue;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.field input {
+  width: 90%;
+  padding: 10px;
+  border: 2px solid lightblue;
+  outline: none;
+}
+
+.actions input {
+  background-color: lightblue;
+  cursor: pointer;
+  padding: 5px 15px;
+  border: none;
+  outline: none;
+}
+
+.actions input:active {
+  opacity: 0.8;
+}
+
+a {
+  display: block;
+  margin: 5px auto;
+  width: 90%;
+  max-width: 500px;
+}
