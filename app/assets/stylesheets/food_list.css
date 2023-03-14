@@ -1,0 +1,24 @@
+table {
+  margin: 20px auto;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 1px 1px 5px lightblue;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid lightblue;
+}
+
+.new_food_link {
+  display: block;
+  padding: 10px;
+  border: 2px solid lightblue;
+  width: 100px;
+  text-align: center;
+  color: black;
+}
