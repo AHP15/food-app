@@ -1,6 +1,11 @@
-.form-title {
+.form-title,
+.login-title {
   font-size: 2rem;
   text-align: center;
+}
+
+#user_remember_me {
+  width: 5%;
 }
 
 form {
