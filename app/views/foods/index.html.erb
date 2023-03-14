@@ -1,0 +1,23 @@
+<a class="new_food_link" href=<%= "/users/#{@user_id}/foods/new" %>>Add Food</a>
+<table>
+    <thead>
+        <tr>
+            <th>Food</th>
+            <th>Measurement unit</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= food.measurement_unit %></td>
+          <td>$<%= food.price %></td>
+          <td><%= food.quantity %></td>
+          <td><a href=<%= "/users/#{@user_id}/foods/#{food.id}"%>>Delete</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
