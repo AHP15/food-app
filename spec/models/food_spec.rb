@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Food, type: :model do
-  subject {
+  subject do
     Food.new(name: 'apple', measurement_unit: 'kg', price: 5, quantity: 10, user_id: 1)
-  }
+  end
   before { subject.save }
 
   it 'name should be present' do
