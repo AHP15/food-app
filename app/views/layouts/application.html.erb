@@ -17,6 +17,7 @@
        <a href="/">Recipe App</a>
          <% if user_signed_in? %>
            <a href=<%= "/users/#{current_user.id}/foods"%>>My Foods</a>
+           <a href=<%= "/users/#{current_user.id}/recipes"%>>My Recipes</a>
            <form class="logout" action="/users/sign_out" method="delete">
              <button type="submit">Logout</button>
            </form>
