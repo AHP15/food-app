@@ -37,3 +37,27 @@
 .public_recipe div {
   margin: 10px;
 }
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  border: 2px solid lightblue;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.navigation a:hover {
+  color: lightblue;
+}
+
+.logout {
+  box-shadow: none;
+  width: 50px;
+  margin: 0;
+}

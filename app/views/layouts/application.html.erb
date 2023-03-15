@@ -13,6 +13,18 @@
   </head>
 
   <body>
+     <header class="navigation">
+       <a href="/">Recipe App</a>
+         <% if user_signed_in? %>
+           <a href=<%= "/users/#{current_user.id}/foods"%>>My Foods</a>
+           <form class="logout" action="/users/sign_out" method="delete">
+             <button type="submit">Logout</button>
+           </form>
+         <% else %>
+           <a href="/users/sign_in">Login</a>
+           <a href="/users/sign_up">Register</a>
+         <% end %>
+     </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
