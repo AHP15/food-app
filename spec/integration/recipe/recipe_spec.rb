@@ -15,6 +15,3 @@ RSpec.describe 'Recipe', type: :request do
     expect(page).to have_http_status(:success)
   end
 end
-
-
-
