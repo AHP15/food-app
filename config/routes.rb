@@ -12,7 +12,4 @@ Rails.application.routes.draw do
   get '/users/:user_id/recipes/new', to: 'recipes#new'
   post '/users/:user_id/recipes/create', to: 'recipes#create'
 
-  # resources :users do
-  #   resources :recipes, only: [:new, :create, :index]
-  # end
 end

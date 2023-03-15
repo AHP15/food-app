@@ -1,10 +1,10 @@
 <h1 class="form-title">Create new recipe</h1>
 
 <div class="new_food">
-  <%= form_with model: @recipe, url: "/users/#{@user_id}/recipes/create", scope: :recipe do |f|%>
+  <%= form_with model: @recipe, url: "/users/#{@user_id}/recipes/create", scope: :recipe, id: "new-recipe-form" do |f|%>
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name, autofocus: true, autocomplete: "name"%>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
