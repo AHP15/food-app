@@ -1,5 +1,6 @@
 .form-title,
-.login-title {
+.login-title,
+.home-title {
   font-size: 2rem;
   text-align: center;
 }

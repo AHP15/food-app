@@ -19,3 +19,21 @@
 * {
   font-family: 'Roboto', sans-serif;
 }
+
+.public_recipe {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 1px 1px 5px lightblue;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.public_recipe div {
+  margin: 10px;
+}
