@@ -1,0 +1,15 @@
+<section class="recipe-main">
+<% @recipe.each do |re| %>
+  <div class="recipe-container">
+    <div class="left-content">
+      <h2><%= re.name %> <%= re.id %></h2>
+      <a class="remove-recipe" href="#">REMOVE</a>
+    </div>
+    <div class="right-content">
+      <p>
+        <%= re.description %>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</section>

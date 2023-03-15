@@ -1,0 +1,32 @@
+.recipe-main {
+  padding: 10%;
+}
+
+.recipe-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 5%;
+  border: 5px solid grey;
+  margin: 3%;
+}
+
+.right-content {
+  width: 60%;
+}
+
+.field textarea {
+  width: 90%;
+  height: 100%;
+  padding: 10px;
+  border: 2px solid lightblue;
+  outline: none;
+}
+
+.field.public-check{
+  display: flex;
+  align-content: center;
+}
+
+#recipe_public {
+  width: 3%;
+}
