@@ -38,6 +38,10 @@ li {
   text-decoration: none;
 }
 
+li {
+  margin-top: 20px;
+}
+
 .detail-title {
   text-align: center;
   padding: 0;
@@ -78,4 +82,14 @@ form > .delete-button {
   font-size: 18px;
   outline: none;
   margin-left: -80px;
+}
+
+.detail_links {
+  display: flex;
+}
+
+.detail_links a {
+  border: 2px solid lightblue;
+  padding: 15px;
+  width: 100px;
 }

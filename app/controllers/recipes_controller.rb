@@ -49,7 +49,28 @@ class RecipesController < ApplicationController
       redirect_to '/users/sign_in'
       return
     end
-    @recipes = Recipe.where(user: current_user.id)
+    @recipe = Recipe.find(params[:id])
+    @recipe_foods = RecipeFood.where(recipe: @recipe.id)
+  end
+
+  def in_user_food?(id, recipe_foods)
+    recipe_foods.each do |re_food|
+      return true if re_food.id == id
+    end
+
+    false
+  end
+
+  def shopping
+    if current_user.nil?
+      redirect_to '/users/sign_in'
+      return
+    end
+
+    recipe_foods = RecipeFood.where(recipe: params[:id])
+    @shopping_food = recipe_foods
+
+    render 'shopping'
   end
 
   def toggle

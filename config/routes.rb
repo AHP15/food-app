@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   put 'users/:user_id/recipes/:id/toggle', to: 'recipes#toggle', as: 'toggle_public_recipe'
   delete '/users/:user_id/recipes/:id', to: 'recipes#destroy', as: 'delete_user_recipe'
 
+  get '/users/:user_id/recipes/:id/shopping_list', to: 'recipes#shopping'
 end
