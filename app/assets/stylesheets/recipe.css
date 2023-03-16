@@ -30,3 +30,52 @@
 #recipe_public {
   width: 3%;
 }
+
+a,
+li {
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+}
+
+.detail-title {
+  text-align: center;
+  padding: 0;
+}
+
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 0 5%;
+}
+
+.btn-primary {
+  background-color: white;
+  cursor: pointer;
+  padding: 5px 15px;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.button_to {
+  padding: 0;
+  width: 0;
+}
+
+.recipe-left {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 3%;
+}
+
+form > .delete-button {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  font-size: 18px;
+  outline: none;
+  margin-left: -80px;
+}

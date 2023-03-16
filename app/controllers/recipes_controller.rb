@@ -15,8 +15,7 @@ class RecipesController < ApplicationController
       redirect_to '/users/sign_in'
       return
     end
-    @user_id = current_user.id
-    @recipe = Recipe.where(user: @user_id)
+    @recipes = Recipe.where(user: current_user.id)
     render 'index'
   end
 
@@ -25,7 +24,6 @@ class RecipesController < ApplicationController
       redirect_to '/users/sign_in'
       return
     end
-
     @user_id = current_user.id
     render 'new'
   end
@@ -35,7 +33,7 @@ class RecipesController < ApplicationController
       redirect_to '/users/sign_in'
       return
     end
-    @recipe = current_user.recipes.build(recipe_params)
+    @recipe = current_user.recipe.build(recipe_params)
     if @recipe.save
       flash[:success] = 'Successfully created the recipe'
       redirect_to "/users/#{current_user.id}/recipes"
@@ -46,7 +44,25 @@ class RecipesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def show
+    if current_user.nil?
+      redirect_to '/users/sign_in'
+      return
+    end
+    @recipes = Recipe.where(user: current_user.id)
+  end
+
+  def toggle
+    @recipe = Recipe.find(params[:id])
+    @recipe.toggle!(:public)
+    redirect_to user_recipe_path(user_id: current_user.id, id: @recipe.id)
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    redirect_to user_recipes_path(current_user)
+  end
 
   private
 

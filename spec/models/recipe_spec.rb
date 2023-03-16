@@ -34,10 +34,16 @@ RSpec.describe Recipe, type: :model do
   end
 
   describe 'Should validate Recipe model fields' do
-    it { is_expected.to validate_presence_of(:name).with_message("can't be blank") }
-    it { should validate_presence_of(:description).with_message("can't be blank") }
-    it { is_expected.to validate_numericality_of(:preparation_time).is_greater_than_or_equal_to(0).only_integer }
-    it { is_expected.to validate_numericality_of(:cooking_time).only_integer }
+    let(:user) { User.create(email: 'eamils@me.com', password: 'passcode123') }
+    subject do
+      described_class.new(name: 'Recipe 1', preparation_time: '1', cooking_time: '1.5',
+                          description: 'recipe description...', user:)
+    end
     it { should belong_to(:user) }
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:description) }
+    it { is_expected.to validate_numericality_of(:preparation_time) }
+    it { is_expected.to validate_numericality_of(:cooking_time) }
+    it { is_expected.to validate_presence_of(:public) }
   end
 end

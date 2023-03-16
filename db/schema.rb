@@ -25,16 +25,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_102623) do
     t.index ["user_id"], name: "index_foods_on_user_id"
   end
 
-  create_table "recipes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.datetime "preparation_time"
-    t.datetime "cooking_time"
-    t.string "description"
-    t.boolean "public", default: false
-    t.bigint "user_id", null: false
-    
   create_table "recipe_foods", force: :cascade do |t|
     t.integer "quantity"
     t.bigint "recipe_id", null: false
