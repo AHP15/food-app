@@ -88,7 +88,7 @@ class RecipesController < ApplicationController
     food.save
     @recipe = Recipe.find(params[:id])
 
-    @recipe_food = RecipeFood.new(quantity:, food_id: food.id, recipe_id: @recipe.id);
+    @recipe_food = RecipeFood.new(quantity:, food_id: food.id, recipe_id: @recipe.id)
     @recipe_food.save
 
     redirect_to "/users/#{current_user.id}/recipes/#{params[:id]}"
