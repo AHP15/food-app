@@ -7,6 +7,7 @@ class Recipe < ApplicationRecord
 
   belongs_to :user, class_name: 'User'
   has_many :recipe_food, class_name: 'RecipeFood'
+  has_many :foods, through: :recipe_foods
 
   def food_items_and_total_amount(id)
     total_amount = 0

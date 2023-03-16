@@ -42,4 +42,13 @@ class FoodsController < ApplicationController
       render 'new'
     end
   end
+
+  def delete
+    RecipeFood.where(food: params[:id]).each(&:destroy)
+    Food.find(params[:id]).destroy
+
+    @user_id = current_user.id
+    @foods = Food.where(user: @user_id)
+    redirect_to "/users/#{@user_id}/foods"
+  end
 end

@@ -73,6 +73,27 @@ class RecipesController < ApplicationController
     render 'shopping'
   end
 
+  def ingredient
+    @recipe_id = params[:id]
+    @user_id = current_user.id
+    render 'ingredient'
+  end
+
+  def create_ingredient
+    name = params[:food]['name']
+    measurement_unit = params[:food]['measurement_unit']
+    price = params[:food]['price']
+    quantity = params[:food]['quantity']
+    food = Food.new(name:, measurement_unit:, price:, quantity:, user_id: current_user.id)
+    food.save
+    @recipe = Recipe.find(params[:id])
+
+    @recipe_food = RecipeFood.new(quantity:, food_id: food.id, recipe_id: @recipe.id);
+    @recipe_food.save
+
+    redirect_to "/users/#{current_user.id}/recipes/#{params[:id]}"
+  end
+
   def toggle
     @recipe = Recipe.find(params[:id])
     @recipe.toggle!(:public)
@@ -88,6 +109,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :cooking_time, :preparation_time, :public)
+    params.require(:recipe).permit(:name, :description, :cooking_time, :preparation_time)
   end
 end

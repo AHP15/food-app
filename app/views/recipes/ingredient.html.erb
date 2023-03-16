@@ -1,0 +1,28 @@
+<h1 class="home-title">Add Ingredient</h1>
+<div class="new_food">
+  <%= form_with model: @food, url: "/users/#{@user_id}/recipes/#{@recipe_id}/ingredient/create", scope: :food do |f|%>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :measurement_unit %><br>
+    <%= f.text_field :measurement_unit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Food" %>
+  </div>
+<% end %>
+</div>

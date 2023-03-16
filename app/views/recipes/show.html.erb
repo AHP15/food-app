@@ -18,7 +18,7 @@
 </section>
 <div class="detail_links">
   <a href=<%= "/users/#{current_user.id}/recipes/#{@recipe.id}/shopping_list"%>>Generate Shopping list</a>
-  <a href="#">Add ingredient</a>
+  <a href=<%= "/users/#{current_user.id}/recipes/#{@recipe.id}/ingredient"%>>Add ingredient</a>
 </div>
 <table>
     <thead>
