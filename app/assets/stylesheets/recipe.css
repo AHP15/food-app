@@ -69,3 +69,21 @@ a, li {
   font-weight: 500;
   padding: 0 3%;
 }
+
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+
+form > .delete-button {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  font-size: 18px;
+  outline: none;
+  margin-left: -80px;
+}
