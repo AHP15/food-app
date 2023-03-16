@@ -30,3 +30,9 @@
 #recipe_public {
   width: 3%;
 }
+
+a {
+  list-style-type: none;
+  color: black;
+  text-decoration: none;
+}

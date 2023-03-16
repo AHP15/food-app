@@ -15,7 +15,6 @@ class RecipesController < ApplicationController
       redirect_to '/users/sign_in'
       return
     end
-    # @user_id = current_user.id
     @recipes = Recipe.where(user: current_user.id)
     render 'index'
   end
@@ -50,7 +49,7 @@ class RecipesController < ApplicationController
       redirect_to '/users/sign_in'
       return
     end
-    @recipe = Recipe.where(user: current_user.id)
+    @recipes = Recipe.where(user: current_user.id)
   end
 
   def toggle
