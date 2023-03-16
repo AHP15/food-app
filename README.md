@@ -90,7 +90,9 @@ After you're finished please remove all the comments and instructions!
 - sign in a user
 - sign up a user
 - add recipe
+- remove recipe
 - add food
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
