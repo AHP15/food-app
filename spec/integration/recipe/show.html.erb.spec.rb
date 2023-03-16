@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipe', type: :feature do
+RSpec.describe 'Recipe', type: :system do
   let!(:user) { User.create!(email: "testing@example.com", password: 'password')}
   let(:recipe) { 
     Recipe.create(
