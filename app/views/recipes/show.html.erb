@@ -1,4 +1,5 @@
 <section class="recipe-main">
+<a class="new_food_link" href=<%= "/users/#{current_user.id}/recipes/new" %>>Add Recipe</a>
   <% @recipes.each do |re| %>
   <h1 class="detail-title">
     <%= re.name %>
