@@ -10,7 +10,9 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/recipes', to: 'recipes#index'
   get '/users/:user_id/recipes/new', to: 'recipes#new'
-  get '/users/:user_id/recipes/:recipe_id/show', to: 'recipes#show'
+  # get '/users/:user_id/recipes/:recipe_id/show', to: 'recipes#show'
+  get '/users/:user_id/recipes/:id', to: 'recipes#show', as: 'user_recipe'
   post '/users/:user_id/recipes/create', to: 'recipes#create'
+  put 'users/:user_id/recipes/:id/toggle', to: 'recipes#toggle', as: 'toggle_public_recipe'
 
 end

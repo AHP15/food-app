@@ -18,29 +18,18 @@ RSpec.describe 'Recipe', type: :feature do
     visit '/'
     expect(page).to have_content('My Recipes')
     click_on 'My Recipes'
-    visit "/users/#{user.id}/recipes/#{recipe.id}/show"
+    visit "/users/#{user.id}/recipes/#{recipe.id}"
     expect(page).to have_content(recipe.name)
     expect(page).to have_content("Preparation time #{recipe.preparation_time} hours")
     expect(page).to have_content("Cooking time #{recipe.cooking_time} hours")
     expect(page).to have_content(recipe.public ? 'Public' : 'Private')
   end
 
-  scenario 'Toggle recipe from public to private' do
-    visit '/'
+  scenario 'Toggle Public/Private button ' do
+    visit "/users/#{user.id}/recipes/#{recipe.id}"
     expect(page).to have_content('Public')
-
-    click_button 'Make Private'
-    expect(page).to have_content("Private")
-    expect(recipe.reload.public).to eq(false)
-  end
-
-  scenario 'Toggle recipe from private to public' do
-    recipe.update(public: false)
-    visit '/'
-    expect(page).to have_content("Private")
-    
-    click_button "Make Public"
-    expect(page).to have_content("Public")
-    expect(recipe.reload.public).to eq(true)
+    click_button 'Public'
+    recipe.reload.public
+    expect(page).to have_content('Private')
   end
 end

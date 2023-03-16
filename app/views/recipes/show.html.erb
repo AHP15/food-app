@@ -9,8 +9,10 @@
       </ul>
     </div>
     <div class="recipe-right">
+      <%= re.public %>
       <p><%= re.public ? "Public" : "Private" %></p>
+      <%= button_to re.public ? "Public" : "Private", toggle_public_recipe_path(user_id: current_user.id, id: re.id), method: :put, class: "btn btn-primary" %>
     </div>
   </div>
   <% end %>
-</section
+ </section

@@ -53,6 +53,12 @@ class RecipesController < ApplicationController
     @recipe = Recipe.where(user: current_user.id)
   end
 
+  def toggle
+    @recipe = Recipe.find(params[:id])
+    @recipe.toggle!(:public)
+    redirect_to user_recipe_path(user_id: current_user.id, id: @recipe.id)
+  end
+
   def destroy; end
 
   private
@@ -60,3 +66,4 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(:name, :description, :cooking_time, :preparation_time, :public)
   end
 end
+
