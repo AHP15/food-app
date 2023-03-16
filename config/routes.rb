@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get '/users/:user_id/recipes', to: 'recipes#index'
   get '/users/:user_id/recipes/new', to: 'recipes#new'
+  get '/users/:user_id/recipes/:recipe_id/show', to: 'recipes#show'
   post '/users/:user_id/recipes/create', to: 'recipes#create'
 
 end

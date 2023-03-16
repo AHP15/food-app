@@ -1,5 +1,6 @@
 <section class="recipe-main">
-<% @recipe.each do |re| %>
+<a class="new_food_link" href=<%= "/users/#{current_user.id}/recipes/new" %>>Add Recipe</a>
+<% @recipes.each do |re| %>
   <div class="recipe-container">
     <div class="left-content">
       <h2><%= re.name %> <%= re.id %></h2>
@@ -9,6 +10,8 @@
       <p>
         <%= re.description %>
       </p>
+      <%= link_to 'Details', "/users/#{current_user.id}/recipes/#{re.id}/show" %>
+      
     </div>
   </div>
   <% end %>
