@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipes', type: :system do
+RSpec.describe 'Recipes', type: :feature do
   before :all do
     @user = User.create(
       name: 'user 1',

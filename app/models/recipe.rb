@@ -1,12 +1,12 @@
 class Recipe < ApplicationRecord
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :cooking_time, presence: true, numericality: { greater_than_or_equl_to: 0 }
+  validates :preparation_time, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  validates :public, presence: true
+
   belongs_to :user, class_name: 'User'
   has_many :recipe_food, class_name: 'RecipeFood'
-
-  validates :name, presence: true
-  validates :preparation_time, presence: true
-  validates :cooking_time, presence: true
-  validates :description, presence: true
-  validates :public, presence: true
 
   def food_items_and_total_amount(id)
     total_amount = 0

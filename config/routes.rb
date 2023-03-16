@@ -7,4 +7,12 @@ Rails.application.routes.draw do
   get '/users/:user_id/foods', to: 'foods#index'
   get '/users/:user_id/foods/new', to: 'foods#new'
   post '/users/:user_id/foods/create', to: 'foods#create'
+
+  get '/users/:user_id/recipes', to: 'recipes#index', as: 'user_recipes'
+  get '/users/:user_id/recipes/new', to: 'recipes#new'
+  get '/users/:user_id/recipes/:id', to: 'recipes#show', as: 'user_recipe'
+  post '/users/:user_id/recipes/create', to: 'recipes#create'
+  put 'users/:user_id/recipes/:id/toggle', to: 'recipes#toggle', as: 'toggle_public_recipe'
+  delete '/users/:user_id/recipes/:id', to: 'recipes#destroy', as: 'delete_user_recipe'
+
 end
