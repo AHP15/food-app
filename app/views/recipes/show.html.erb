@@ -1,0 +1,16 @@
+<section class="recipe-details">
+  <% @recipe.each do |re| %>
+  <h1><%= re.name %></h1>
+  <div class="details-container">
+    <div class="recipe-left">
+      <ul>
+        <li>Preparation time <%= re.preparation_time %> hours</li>
+        <li>Cooking time <%= re.cooking_time%> hours</li>
+      </ul>
+    </div>
+    <div class="recipe-right">
+      <p><%= re.public ? "Public" : "Private" %></p>
+    </div>
+  </div>
+  <% end %>
+</section>

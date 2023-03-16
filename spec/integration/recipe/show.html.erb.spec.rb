@@ -20,7 +20,8 @@ RSpec.describe 'Recipe', type: :feature do
     click_on 'My Recipes'
     visit "/users/#{user.id}/recipes/#{recipe.id}/show"
     expect(page).to have_content(recipe.name)
-    expect(page).to have_content(recipe.cooking_time)
+    expect(page).to have_content("Preparation time #{recipe.preparation_time} hours")
+    expect(page).to have_content("Cooking time #{recipe.cooking_time} hours")
     expect(page).to have_content(recipe.public ? 'Public' : 'Private')
   end
 end
