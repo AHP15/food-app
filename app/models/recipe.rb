@@ -8,7 +8,6 @@ class Recipe < ApplicationRecord
   belongs_to :user, class_name: 'User'
   has_many :recipe_food, class_name: 'RecipeFood'
 
-
   def food_items_and_total_amount(id)
     total_amount = 0
     items = RecipeFood.where(recipe: id)

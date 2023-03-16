@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipe', type: :system do
-  let(:user) { User.create!(email: "user10@email.com", password: "passcode123")}
+  let(:user) { User.create!(email: 'user10@email.com', password: 'passcode123') }
   before do
     login_as(user, scope: :user)
     user.confirmed_at = Time.now

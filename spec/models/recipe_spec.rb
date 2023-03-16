@@ -34,7 +34,10 @@ RSpec.describe Recipe, type: :model do
 
   describe 'Should validate Recipe model fields' do
     let(:user) { User.create(email: 'eamils@me.com', password: 'passcode123') }
-    subject { described_class.new(name: 'Recipe 1',preparation_time: '1',cooking_time: '1.5',description: 'recipe description...', user: user)}
+    subject do
+      described_class.new(name: 'Recipe 1', preparation_time: '1', cooking_time: '1.5',
+                          description: 'recipe description...', user:)
+    end
     it { should belong_to(:user) }
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:description) }

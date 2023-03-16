@@ -1,20 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'Recipe', type: :system do
-  let!(:user) { User.create!(email: "testing@example.com", password: 'password')}
-  let(:recipe) { 
+  let!(:user) { User.create!(email: 'testing@example.com', password: 'password') }
+  let(:recipe) do
     Recipe.create(
-    name: 'Pasta Carbonara', user_id: user.id, public: true,
-    cooking_time: 45, preparation_time: 50, description: 'This is a Spaniard dish'
-  )}
-  
+      name: 'Pasta Carbonara', user_id: user.id, public: true,
+      cooking_time: 45, preparation_time: 50, description: 'This is a Spaniard dish'
+    )
+  end
+
   before do
     login_as(user, scope: :user)
     user.confirmed_at = Time.now
     user.save
   end
 
-  scenario "Dispalying the Recipe detail page" do
+  scenario 'Dispalying the Recipe detail page' do
     visit '/'
     expect(page).to have_content('My Recipes')
     click_on 'My Recipes'
