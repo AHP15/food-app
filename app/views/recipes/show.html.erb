@@ -1,18 +1,19 @@
-<section class="recipe-details">
-
+<section class="recipe-main">
   <% @recipes.each do |re| %>
-  <h1><%= re.name %></h1>
+  <h1 class="detail-title">
+    <%= re.name %>
+  </h1>
+  
   <div class="details-container">
     <div class="recipe-left">
       <ul>
         <li>Preparation time <%= re.preparation_time %> hours</li>
         <li>Cooking time <%= re.cooking_time%> hours</li>
+        <li>Steps to go here</li>
       </ul>
     </div>
     <div class="recipe-right">
-      <%= re.public %>
-      <p><%= re.public ? "Public" : "Private" %></p>
-      <%= button_to re.public ? "Public" : "Private", toggle_public_recipe_path(user_id: current_user.id, id: re.id), method: :put, class: "btn btn-primary" %>
+      <%= button_to re.public ? "Public" : "Private", toggle_public_recipe_path(user_id: current_user.id, id: re.id), method: :put, class: "btn-primary" %>
     </div>
   </div>
   <% end %>
