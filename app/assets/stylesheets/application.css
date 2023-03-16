@@ -1,0 +1,63 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.public_recipe {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  border: 2px solid lightblue;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 1px 1px 5px lightblue;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.public_recipe div {
+  margin: 10px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  border: 2px solid lightblue;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.navigation a:hover {
+  color: lightblue;
+}
+
+.logout {
+  box-shadow: none;
+  width: 50px;
+  margin: 0;
+}

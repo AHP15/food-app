@@ -1,0 +1,13 @@
+<h1 class="home-title">Public Recipes</h1>
+<% @recipes.each do |recipe| %>
+  <a class="public_recipe" href=<%= "/recipes/#{recipe[:recipe].id}"%>>
+    <div>
+      <h2><%= recipe[:recipe].name %></h2>
+      <h4>By <%= recipe[:recipe].user.name %></h4>
+    </div>
+    <div>
+      <p>Total Food items: <%= recipe[:recipe_data][:items]%></p>
+      <p>Total price: $<%= recipe[:recipe_data][:total_amount]%></p>
+    </div>
+  </a>
+<% end %>

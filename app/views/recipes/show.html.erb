@@ -1,0 +1,42 @@
+<section class="recipe-main">
+  <h1 class="detail-title">
+    <%= @recipe.name %>
+  </h1>
+  
+  <div class="details-container">
+    <div class="recipe-left">
+      <ul>
+        <li>Preparation time <%= @recipe.preparation_time %> hours</li>
+        <li>Cooking time <%= @recipe.cooking_time%> hours</li>
+        <li><%= @recipe.description%></li>
+      </ul>
+    </div>
+    <div class="recipe-right">
+      <%= button_to @recipe.public ? "Public" : "Private", toggle_public_recipe_path(user_id: current_user.id, id: @recipe.id), method: :put, class: "btn-primary" %>
+    </div>
+  </div>
+</section>
+<div class="detail_links">
+  <a href=<%= "/users/#{current_user.id}/recipes/#{@recipe.id}/shopping_list"%>>Generate Shopping list</a>
+  <a href=<%= "/users/#{current_user.id}/recipes/#{@recipe.id}/ingredient"%>>Add ingredient</a>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @recipe_foods.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.food.quantity %><%= recipe_food.food.measurement_unit %></td>
+          <td>$<%= recipe_food.food.price * recipe_food.food.quantity %></td>
+          <td><a href="#">Modify</a><a href="#">Remove</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>

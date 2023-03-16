@@ -1,0 +1,24 @@
+<section class="recipe-main">
+<a class="new_food_link" href=<%= "/users/#{current_user.id}/recipes/new" %>>Add Recipe</a>
+  <% @recipes.each do |re| %>
+    <div class="recipe-container">
+      <div class="left-content">
+        <div class="title">
+        <h2>
+          <%= re.name %> <%= re.id %>
+        </h2>
+        </div>
+        <div class="remove-btn">
+          <%= button_to "REMOVE", delete_user_recipe_path(current_user, re), method: :delete, data: { confirm: "Are you sure?" }, class: "delete-button"%>
+        </div>
+      </div>
+      <div class="right-content">
+      <%= link_to user_recipe_path(user_id: current_user.id, id: re.id) do %>
+        <p>
+          <%= re.description %>
+        </p> 
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</section>

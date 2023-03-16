@@ -1,0 +1,22 @@
+<h1 class="home-title">Shopping</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Food</th>
+            <th>Quantity</th>
+            <th>Value</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @shopping_food.each do |recipe_food| %>
+        <tr>
+          <td><%= recipe_food.food.name %></td>
+          <td><%= recipe_food.food.quantity %><%= recipe_food.food.measurement_unit %></td>
+          <td>$<%= recipe_food.food.price * recipe_food.food.quantity %></td>
+          <td><a href="#">Modify</a><a href="#">Remove</a></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
+>

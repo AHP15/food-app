@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FoodApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "signup", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "food_list", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "recipe", "data-turbo-track": "reload" %>
+    
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+     <header class="navigation">
+       <a href="/">Recipe App</a>
+         <% if user_signed_in? %>
+           <a href=<%= "/users/#{current_user.id}/foods"%>>My Foods</a>
+           <a href=<%= "/users/#{current_user.id}/recipes"%>>My Recipes</a>
+           <form class="logout" action="/users/sign_out" method="delete">
+             <button type="submit">Logout</button>
+           </form>
+         <% else %>
+           <a href="/users/sign_in">Login</a>
+           <a href="/users/sign_up">Register</a>
+         <% end %>
+     </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>

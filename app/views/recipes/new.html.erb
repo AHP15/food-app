@@ -1,0 +1,33 @@
+<h1 class="form-title">Create new recipe</h1>
+
+<div class="new_food">
+  <%= form_with model: @recipe, url: "/users/#{@user_id}/recipes/create", scope: :recipe, id: "new-recipe-form" do |f|%>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, rows: 10 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cooking_time %><br>
+    <%= f.number_field :cooking_time %>
+  </div>
+
+  <div class="field">
+    <%= f.label :preparation_time %><br>
+    <%= f.number_field :preparation_time %>
+  </div>
+   <div class="field public-check">
+    <%= f.label :public %><br>
+    <%= f.check_box :public %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Recipe" %>
+  </div>
+<% end %>
+</div>
